@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Dragons - Всесвіт пригод</title>
+    <style>
+        /* Глобальні стилі */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a2e;
+            color: #e6e6e6;
+            line-height: 1.6;
+            padding-top: 60px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Стилі для заголовків */
+        h1, h2, h3 {
+            color: #f8bb44;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(90deg, #4e4a59, #2d2b36);
+            border-bottom: 4px solid #f8bb44;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            border-left: 5px solid #f8bb44;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        
+        /* Стилі для навігації */
+        nav {
+            background-color: #2d2b36;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        nav li {
+            margin: 0 10px;
+        }
+        
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            background-color: #f8bb44;
+            color: #1a1a2e;
+        }
+        
+        /* Стилі для основного контенту */
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #4e4a59;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background-color: #4e4a59;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #f8bb44;
+        }
+        
+        /* Стилі для таблиці */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #2d2b36;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #4e4a59;
+        }
+        
+        th {
+            background-color: #f8bb44;
+            color: #1a1a2e;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #4e4a59;
+        }
+        
+        /* Стилі для аудіо-плеєра */
+        .audio-player {
+            margin: 30px auto;
+            text-align: center;
+            background-color: #2d2b36;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+        
+        /* Стилі для підвалу */
+        footer {
+            background-color: #2d2b36;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: #f8bb44;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #e6e6e6;
+        }
+        
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            nav ul {
+                padding: 0 10px;
+            }
+            
+            nav a {
+                font-size: 0.8rem;
+                padding: 5px 8px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+                padding: 20px 0;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#intro">Вступ</a></li>
+            <li><a href="#history">Історія</a></li>
+            <li><a href="#classes">Класи</a></li>
+            <li><a href="#races">Раси</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Dungeons & Dragons</h1>
+    </header>
+    
+    <div class="container">
+        <section id="intro" class="section">
+            <h2>Що таке Dungeons & Dragons?</h2>
+            <p>Dungeons & Dragons (D&D) - це настільна рольова гра, в якій гравці створюють персонажів і відправляються у фантастичні пригоди у світі, створеному Майстром Підземілля (Dungeon Master, DM). Це гра уявлення, де гравці описують дії своїх персонажів, а успіх цих дій часто визначається кидком кубиків.</p>
+            
+            <div class="highlight">
+                <p>D&D - це не просто гра, це спосіб створення спільних історій. Кожна сесія - це унікальна пригода, де гравці разом з Майстром Підземілля творять незабутні моменти, повні героїзму, драматизму та веселощів.</p>
+            </div>
+            
+            <p>Гра була вперше опублікована в 1974 році компанією Tactical Studies Rules, Inc. (TSR), яку заснували Гері Гайгакс і Дейв Арнесон. Зараз права на D&D належать Wizards of the Coast, дочірній компанії Hasbro.</p>
+        </section>
+        
+        <section id="history" class="section">
+            <h2>Історія Dungeons & Dragons</h2>
+            <p>Dungeons & Dragons зародилася з військових ігор з мініатюрами, які були популярні в 1960-х роках. Гері Гайгакс і Дейв Арнесон адаптували ці ігри, зосередившись на індивідуальних персонажах замість армій, і додали елементи фентезі, натхненні творами таких авторів, як Дж. Р. Р. Толкін, Роберт Говард і Фріц Лейбер.</p>
+            
+            <p>Перше видання D&D, відоме як "Original Dungeons & Dragons", було випущено в 1974 році. Воно складалося з трьох буклетів у дерев'яній коробці. Гра швидко набрала популярність, і в 1977 році вийшло оновлене видання під назвою "Advanced Dungeons & Dragons" (AD&D).</p>
+            
+            <p>За роки свого існування D&D пройшла через кілька основних редакцій:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Версія</th>
+                        <th>Рік випуску</th>
+                        <th>Основні зміни</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Original D&D</td>
+                        <td>1974</td>
+                        <td>Перше видання, засноване на Chainmail</td>
+                    </tr>
+                    <tr>
+                        <td>AD&D 1st Edition</td>
+                        <td>1977-1979</td>
+                        <td>Більш структурована система правил</td>
+                    </tr>
+                    <tr>
+                        <td>AD&D 2nd Edition</td>
+                        <td>1989</td>
+                        <td>Спрощення правил, нові сеттинги</td>
+                    </tr>
+                    <tr>
+                        <td>D&D 3rd Edition</td>
+                        <td>2000</td>
+                        <td>Система d20, більша уніфікація</td>
+                    </tr>
+                    <tr>
+                        <td>D&D 4th Edition</td>
+                        <td>2008</td>
+                        <td>Акцент на тактичні бої, більше схоже на відеоігри</td>
+                    </tr>
+                    <tr>
+                        <td>D&D 5th Edition</td>
+                        <td>2014</td>
+                        <td>Спрощення, більше свободи для гравців і DM</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>П'яте видання (5e), випущене в 2014 році, стало найпопулярнішим в історії гри, значно розширивши аудиторію D&D завдяки спрощенню правил і популярності таких шоу, як Critical Role.</p>
+        </section>
+        
+        <section id="classes" class="section">
+            <h2>Класи персонажів</h2>
+            <p>У Dungeons & Dragons кожен гравець створює персонажа, вибираючи його клас, який визначає основні навички та здібності. Ось основні класи з 5-го видання:</p>
+            
+            <p>Кожен клас має унікальні особливості, які впливають на ігровий процес. Наприклад:</p>
+            <ul>
+                <li><strong>Воїни</strong> - майстри всіх видів зброї та обладунків</li>
+                <li><strong>Чародії</strong> - використовують внутрішню магічну силу</li>
+                <li><strong>Розбійники</strong> - експерти в хитрощах і скритності</li>
+                <li><strong>Чаклуни</strong> - отримують магію від угод з могутніми істотами</li>
+                <li><strong>Монахи</strong> - використовують духовну енергію кі для бойових мистецтв</li>
+            </ul>
+        </section>
+        
+        <section id="races" class="section">
+            <h2>Раси персонажів</h2>
+            <p>Окрім класу, персонажі в D&D мають расу, яка визначає їхні фізичні характеристики та деякі особливості. Основні раси включають:</p>
+            
+            <div class="highlight">
+                <p>Кожна раса надає унікальні бонуси до характеристик, навичок і особливостей, що впливає на те, як персонаж взаємодіє зі світом.</p>
+            </div>
+            
+            <p>Крім основних рас, існують і інші варіанти, такі як:</p>
+            <ul>
+                <li><strong>Драконороджені</strong> - схожі на драконів гуманоїди</li>
+                <li><strong>Гноми</strong> - дрібні і винахідливі</li>
+                <li><strong>Напівели</strong> - наполовину люди, наполовину ельфи</li>
+                <li><strong>Тіфлінги</strong> - нащадки демонів</li>
+                <li><strong>Орки</strong> - могутні і войовничі</li>
+            </ul>
+        </section>
+
+        <div class="audio-player">
+            <h3>Фонова музика</h3>
+            <audio controls>
+                <source src="https://relax-fm.net/uploads/music/2024/07/BONESAW_Blod_Besvimelse_Misantrop.mp3" type="audio/mpeg">
+                Ваш браузер не підтримує аудіо-елемент.
+            </audio>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <h3>Dungeons & Dragons - світ безмежних можливостей</h3>
+            <p>© 2023 Wizards of the Coast. Dungeons & Dragons, D&D і їхні логотипи є товарними знаками Wizards of the Coast LLC.</p>
+            <p>Цей сайт створено шанувальниками для шанувальників і не пов'язаний з Wizards of the Coast.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome для іконок -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
